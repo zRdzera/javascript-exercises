@@ -11,24 +11,41 @@ const add = function(...obj) {
 //   return result;
 // };
 
-const subtract = function() {
-	
+const subtract = function(...obj) {
+	return obj.reduce((acc, currentValue) => acc - currentValue);
 };
 
-const sum = function() {
-	
+const sum = function([...obj]) {
+	const result = obj.reduce((acc, currentValue) => acc + currentValue, 0)
+  return parseInt(result);
 };
 
-const multiply = function() {
-
+const multiply = function([...obj]) {
+  return obj.reduce((acc, currentValue) => acc * currentValue);
 };
 
-const power = function() {
-	
+const power = function(num, power) {
+  let array = new Array();
+  for(let i = 0; i < power; i++){
+    array[i] = num;
+  }
+  return array.reduce((acc, currentValue) => acc *= currentValue);
 };
 
-const factorial = function() {
-	
+const factorial = function(num) {
+  let result;
+ 
+  if(num === 0){
+    result = 1;
+  }
+  else {
+    result = num;
+
+    for(let i = num-1; i > 0; i--){
+      result *= i;
+    }
+  }
+  return result;
 };
 
 // Do not edit below this line
