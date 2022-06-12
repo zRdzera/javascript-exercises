@@ -4,6 +4,7 @@ const fibonacci = function(num) {
     array[1] = 1;
 
     if (num < 0) return "OOPS";
+    if (num === 0) return 0;
 
     for (let index = 2; index < num; index++) {
         let result = array[index-1] + array[index-2];
